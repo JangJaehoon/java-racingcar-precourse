@@ -53,7 +53,14 @@ public class Car_Name_Position {
         return position;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    @Override
+    public String toString() {
+        return name + " : " + getRoad();
+    }
 
 
 
