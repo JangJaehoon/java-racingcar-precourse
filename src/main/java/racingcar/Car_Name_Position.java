@@ -9,7 +9,7 @@ public class Car_Name_Position {
     public static final String road = "-";
     public static final String name_length_info = "[ERROR] The name of car should be from 1 character to 5 characters.";
 
-    private final String name = null;
+    private final String name;
     private int position = 0;
 
 
@@ -22,7 +22,8 @@ public class Car_Name_Position {
     }
 
     public Car_Name_Position(String name){
-
+        validName(name);
+        this.name = name;
     }
 
 
