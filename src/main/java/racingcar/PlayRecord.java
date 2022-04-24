@@ -1,5 +1,7 @@
 package racingcar;
 
+import camp.nextstep.edu.missionutils.Console;
+
 import java.util.Objects;
 
 public class PlayRecord {
@@ -30,6 +32,16 @@ public class PlayRecord {
     private void validInput(String i) {
         validInteger(i);
         validPlus(i);
+    }
+
+    public void getInput() {
+        try {
+            String input = Console.readLine();
+            validInput(input);
+            round = Integer.parseInt(input);
+        } catch (IllegalArgumentException e) {
+            getInput();
+        }
     }
 
     public boolean isSame(PlayRecord record) {
