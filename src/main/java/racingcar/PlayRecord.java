@@ -8,4 +8,19 @@ public class PlayRecord {
             = "[ERROR] Try count should be plus number";
     private Integer round = 0;
 
+    private void validInteger(String i) {
+        try {
+            Integer.parseInt(i);
+        } catch (Exception e) {
+            System.out.println(number_exception);
+            throw new IllegalArgumentException();
+        }
+    } // validInteger method
+
+
+
+
+
+
+
 }
