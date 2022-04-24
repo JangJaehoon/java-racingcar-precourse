@@ -12,6 +12,8 @@ public class Car_Name_Position {
     private final String name = null;
     private int position = 0;
 
+    public Car_Name_Position(String name){
 
+    }
 
 }
