@@ -1,5 +1,7 @@
 package racingcar;
 
+import java.util.Objects;
+
 public class PlayRecord {
 
     public static final String number_exception
@@ -30,8 +32,28 @@ public class PlayRecord {
         validPlus(i);
     }
 
+    public boolean isSame(PlayRecord record) {
+        return this.equals(record);
+    }
 
+    public void increase() {
+        round += 1;
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        PlayRecord record = (PlayRecord)o;
+        return Objects.equals(round, record.round);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(round);
+    }
 
 
 }
