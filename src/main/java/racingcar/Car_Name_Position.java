@@ -1,5 +1,7 @@
 package racingcar;
 
+import camp.nextstep.edu.missionutils.Randoms;
+
 public class Car_Name_Position {
     private static final int min_length_name = 1;
     public static final int max_length_name = 5;
@@ -13,7 +15,6 @@ public class Car_Name_Position {
     private int position = 0;
 
 
-
     private void validName(String name) {
         if (name.length() < min_length_name || name.length() > max_length_name) {
             System.out.println(name_length_info);
@@ -25,6 +26,35 @@ public class Car_Name_Position {
         validName(name);
         this.name = name;
     }
+
+    private boolean movable() {
+        return Randoms.pickNumberInRange(min_range_move, max_range_move) >= min_move;
+    }
+
+    public void move() {
+        if (movable()) {
+            position += 1;
+        }
+    }
+
+    private String getRoad() {
+        StringBuffer stringBuffer = new StringBuffer();
+        for (int i = 0; i < position; i++) {
+            stringBuffer.append(road);
+        }
+        return stringBuffer.toString();
+    }
+
+    public boolean isSamePosition(int maxPosition) {
+        return position == maxPosition;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+
+
 
 
 }
