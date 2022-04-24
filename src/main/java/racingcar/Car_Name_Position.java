@@ -12,8 +12,18 @@ public class Car_Name_Position {
     private final String name = null;
     private int position = 0;
 
+
+
+    private void validName(String name) {
+        if (name.length() < min_length_name || name.length() > max_length_name) {
+            System.out.println(name_length_info);
+            throw new IllegalArgumentException();
+        }
+    }
+
     public Car_Name_Position(String name){
 
     }
+
 
 }
