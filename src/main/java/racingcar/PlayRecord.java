@@ -25,6 +25,10 @@ public class PlayRecord {
         }
     } // validPlus method
 
+    private void validInput(String i) {
+        validInteger(i);
+        validPlus(i);
+    }
 
 
 
