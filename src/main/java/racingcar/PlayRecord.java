@@ -18,6 +18,13 @@ public class PlayRecord {
     } // validInteger method
 
 
+    private void validPlus(String i) {
+        if (Integer.parseInt(i) <= 0) {
+            System.out.println(plus_exception);
+            throw new IllegalArgumentException();
+        }
+    } // validPlus method
+
 
 
 
