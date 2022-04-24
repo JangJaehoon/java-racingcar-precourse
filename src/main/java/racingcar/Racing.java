@@ -35,4 +35,10 @@ public class Racing {
         System.out.println( "The final winner : " + String.join(", ", winnerNames));
     }
 
+
+    public void run() {
+        initCars();
+        initPlayRecord();
+        playRecord();
+    }
 }
