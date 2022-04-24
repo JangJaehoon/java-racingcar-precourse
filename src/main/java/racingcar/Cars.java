@@ -33,9 +33,28 @@ public class Cars {
         }
     }
 
+    public void move(){
+        cars.stream().forEach(Car_Name_Position::move);
+    }
 
+    public void showState(){
+        cars.stream().forEach(System.out::println);
+        System.out.println();
+    }
 
+    private int getPosition() {
+        int goodPosition = 0;
+        for (Car_Name_Position car : cars) {
+            goodPosition = Math.max(goodPosition, car.getPosition());
+        }
+        return goodPosition;
+    }
 
-
+    public List<String> getWinners(){
+        return cars.stream()
+                .filter(car -> car.isSamePosition(getPosition()))
+                .map(Car_Name_Position::getName)
+                .collect(Collectors.toList());
+    }
 
 }
